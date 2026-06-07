@@ -113,11 +113,11 @@ const rosto = [
     children: [new TextRun({ size: 24, text:
       "Este relatório apresenta o framework desenvolvido para a disciplina de Reuso de Software e Metodologias Ágeis, ministrada pelo Prof. Dr. Arturo Hernández Domínguez. O projeto consiste em um framework de domínio para sistemas de formatura online, construído com arquitetura de microserviços e componentes de software, com backend orientado a objetos e interface web." })] }),
   H2("Links do Projeto"),
-  linkLine("Repositório GitHub:", "https://github.com/<usuario>/formatura-framework"),
+  linkLine("Repositório GitHub:", "https://github.com/DevMarcosz/formatura-framework"),
   linkLine("Vídeo de demonstração:", "https://youtu.be/<id>"),
   linkLine("Aplicação publicada:", "https://<app>.vercel.app"),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 120 },
-    children: [new TextRun({ text: "(substituir pelos links definitivos antes da entrega)", italics: true, size: 18, color: "888888" })] }),
+    children: [new TextRun({ text: "(vídeo e aplicação publicada: substituir antes da entrega)", italics: true, size: 18, color: "888888" })] }),
   new Paragraph({ children: [new PageBreak()] }),
 ];
 

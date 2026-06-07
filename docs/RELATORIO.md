@@ -6,10 +6,10 @@
 **Professor:** Dr. Arturo Hernández Domínguez
 **Equipe:** Marcos
 
-**Links (preencher):**
-- Repositório GitHub: `https://github.com/<usuario>/formatura-framework`
-- Vídeo de demonstração: `https://youtu.be/<id>`
-- Aplicação publicada (frontend): `https://<app>.vercel.app`
+**Links:**
+- Repositório GitHub: https://github.com/DevMarcosz/formatura-framework
+- Vídeo de demonstração: `https://youtu.be/<id>` *(preencher)*
+- Aplicação publicada (frontend): `https://<app>.vercel.app` *(preencher)*
 
 ---
 
