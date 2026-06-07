@@ -1,0 +1,9 @@
+# Evita copiar artefatos pesados/locais para o contexto de build Docker.
+**/target/
+**/*.iml
+.idea/
+.git/
+frontend/node_modules/
+frontend/dist/
+docs/
+*.md

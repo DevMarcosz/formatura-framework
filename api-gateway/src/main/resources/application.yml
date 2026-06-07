@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      # CORS liberado para o frontend acessar o gateway diretamente.
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+        - id: auth
+          uri: ${AUTH_URI:http://localhost:8086}
+          predicates:
+            - Path=/auth/**
+        - id: turmas
+          uri: ${TURMAS_URI:http://localhost:8085}
+          predicates:
+            - Path=/turmas/**
+        - id: financeiro
+          uri: ${FINANCEIRO_URI:http://localhost:8081}
+          predicates:
+            - Path=/financeiro/**
+        - id: eventos
+          uri: ${EVENTOS_URI:http://localhost:8082}
+          predicates:
+            - Path=/eventos/**
+        - id: comissao
+          uri: ${COMISSAO_URI:http://localhost:8083}
+          predicates:
+            - Path=/comissao/**
+        - id: notificacao
+          uri: ${NOTIFICACAO_URI:http://localhost:8084}
+          predicates:
+            - Path=/notificacoes/**

@@ -1,0 +1,15 @@
+target/
+*.class
+*.jar
+*.iml
+.idea/
+.vscode/
+.DS_Store
+node_modules/
+frontend/dist/
+docs/*.pdf
+*.log
+
+# Arquivos que nao pertencem a este projeto (materiais externos da disciplina)
+*.lnk
+*SmartClass*.pdf

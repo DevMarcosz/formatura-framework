@@ -1,0 +1,70 @@
+# Orquestração dos microserviços do Framework de Formatura.
+# Cada serviço é construído a partir da RAIZ do projeto (context: .) usando seu
+# Dockerfile, que compila o reator Maven (framework-core + serviço).
+#
+# Suba tudo com:  docker compose up --build
+# Acesse o gateway em http://localhost:8080
+
+services:
+  api-gateway:
+    build:
+      context: .
+      dockerfile: api-gateway/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      AUTH_URI: http://auth-service:8086
+      TURMAS_URI: http://turmas-service:8085
+      FINANCEIRO_URI: http://financeiro-service:8081
+      EVENTOS_URI: http://eventos-service:8082
+      COMISSAO_URI: http://comissao-service:8083
+      NOTIFICACAO_URI: http://notificacao-service:8084
+    depends_on:
+      - auth-service
+      - turmas-service
+      - financeiro-service
+      - eventos-service
+      - comissao-service
+      - notificacao-service
+
+  auth-service:
+    build:
+      context: .
+      dockerfile: auth-service/Dockerfile
+    ports:
+      - "8086:8086"
+
+  turmas-service:
+    build:
+      context: .
+      dockerfile: turmas-service/Dockerfile
+    ports:
+      - "8085:8085"
+
+  financeiro-service:
+    build:
+      context: .
+      dockerfile: financeiro-service/Dockerfile
+    ports:
+      - "8081:8081"
+
+  eventos-service:
+    build:
+      context: .
+      dockerfile: eventos-service/Dockerfile
+    ports:
+      - "8082:8082"
+
+  comissao-service:
+    build:
+      context: .
+      dockerfile: comissao-service/Dockerfile
+    ports:
+      - "8083:8083"
+
+  notificacao-service:
+    build:
+      context: .
+      dockerfile: notificacao-service/Dockerfile
+    ports:
+      - "8084:8084"
