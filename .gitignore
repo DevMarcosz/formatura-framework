@@ -13,3 +13,7 @@ docs/*.pdf
 # Arquivos que nao pertencem a este projeto (materiais externos da disciplina)
 *.lnk
 *SmartClass*.pdf
+
+# Materiais de documentacao/apresentacao mantidos apenas localmente (fora do repo)
+docs/
+ROTEIRO-VIDEO.pdf

@@ -48,9 +48,15 @@ e nos *template methods* `final` (`processar`, `organizar`, `notificar`).
 
 ## 🏛️ Arquitetura
 
-<p align="center">
-  <img src="docs/diagramas/Diagrama%20de%20componentes.png" alt="Diagrama de componentes" width="640">
-</p>
+```text
+                       Frontend (React)
+                              │
+                       API Gateway (8080)
+   ┌──────────┬───────────────┼───────────────┬───────────────┐
+auth (8086) turmas (8085) financeiro (8081) eventos (8082) comissao (8083) notificacao (8084)
+                              │
+                       framework-core  ← componente reutilizável (hot spots), usado por todos
+```
 
 Arquitetura de **microserviços** com um **API Gateway** como porta única de entrada.
 Todos os serviços de domínio **reutilizam o componente `framework-core`** — onde ficam
@@ -150,14 +156,8 @@ formatura-framework/
 ├── eventos-service/
 ├── comissao-service/
 ├── notificacao-service/
-├── frontend/                # Interface web (React)
-└── docs/                    # Relatório + diagramas UML-F
+└── frontend/                # Interface web (React)
 ```
-
-## 📄 Documentação
-
-- Relatório do projeto: [`docs/RELATORIO.md`](docs/RELATORIO.md)
-- Diagramas UML-F: [`docs/DIAGRAMAS-UML-F.md`](docs/DIAGRAMAS-UML-F.md)
 
 ## 👤 Autor
 
